@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking System</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        /* Form Styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Appointment Booking System</h1>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <input type="submit" value="Book Appointment">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Appointment Booking System
+    </footer>
+
+    <script>
+        // JavaScript code for handling form submission (can be expanded further)
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Here you can write JavaScript code to handle the form submission,
+            // like sending data to a server or displaying a confirmation message.
+            // For demonstration purposes, let's just log the form data to the console.
+            const formData = new FormData(event.target);
+            const data = {};
+            for (const [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            console.log('Form Data:', data);
+            // You can add further processing here
+        });
+    </script>
+
+</body>
+</html>
